@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  web_chat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080:8080"
+  db:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
+    restart: always
+    ports:
+      - "5432:5432"
