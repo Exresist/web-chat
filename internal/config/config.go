@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"time"
+
+	"webChat/internal/model"
 )
 
 type (
@@ -30,10 +31,10 @@ type (
 		MigrateDown bool `json:"migrate_down"`
 	}
 	API struct {
-		Address         string        `json:"address"`
-		ReadTimeout     time.Duration `json:"read_timeout"`
-		WriteTimeout    time.Duration `json:"write_timeout"`
-		ShutdownTimeout time.Duration `json:"shutdown_timeout"`
+		Address         string         `json:"address"`
+		ReadTimeout     model.Duration `json:"read_timeout"`
+		WriteTimeout    model.Duration `json:"write_timeout"`
+		ShutdownTimeout model.Duration `json:"shutdown_timeout"`
 	}
 	Files struct {
 		MaxFileSize      int64    `json:"max_file_size"`

@@ -3,6 +3,7 @@ package handler
 import (
 	"context"
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/oklog/run"
@@ -35,8 +36,8 @@ func NewServer(cfg *config.Config, logger *log.SugaredLogger,
 	srv := &Server{
 		Server: &http.Server{
 			Addr:         cfg.API.Address,
-			ReadTimeout:  cfg.API.ReadTimeout,
-			WriteTimeout: cfg.API.WriteTimeout,
+			ReadTimeout:  time.Duration(cfg.API.ReadTimeout),
+			WriteTimeout: time.Duration(cfg.API.WriteTimeout),
 		},
 		cfg:       cfg,
 		logger:    logger,
@@ -65,7 +66,7 @@ func (s *Server) Run(g *run.Group) {
 	}, func(err error) {
 		s.logger.Error("[http-server] terminated", err)
 
-		ctx, cancel := context.WithTimeout(context.Background(), s.cfg.API.ShutdownTimeout)
+		ctx, cancel := context.WithTimeout(context.Background(), time.Duration(s.cfg.API.ShutdownTimeout))
 		defer cancel()
 
 		s.logger.Error("[http-server] stopped", s.Shutdown(ctx))

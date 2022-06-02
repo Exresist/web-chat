@@ -2,9 +2,6 @@ export GOFLAGS=-mod=vendor
 
 OUT := bin/web-chat
 
-TEST_PACKAGE=./internal/...
-TEST_CONFIG=-race -timeout 600s -count=1 -p 1
-
 vendor:
 	go mod tidy
 	go mod vendor

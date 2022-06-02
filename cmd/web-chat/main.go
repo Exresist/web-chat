@@ -1,4 +1,4 @@
-package web_chat
+package main
 
 import (
 	"context"
