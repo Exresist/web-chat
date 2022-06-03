@@ -11,7 +11,7 @@
   },
   "db": {
     "name": "postgres",
-    "host": "webChat",
+    "host": "db",
     "password": "postgres",
     "port": "5432",
     "ssl_mode": "disable",

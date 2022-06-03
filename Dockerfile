@@ -3,7 +3,7 @@ FROM golang:latest as builder
 WORKDIR $GOPATH/src/web-chat/
 COPY . .
 
-RUN make build
+RUN export CGO_ENABLED=0 make build
 
 
 FROM alpine:latest

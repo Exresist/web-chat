@@ -7,12 +7,11 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/oklog/run"
+	log "go.uber.org/zap"
 
 	api "webChat/internal/api/http"
 	"webChat/internal/config"
 	"webChat/internal/db"
-
-	log "go.uber.org/zap"
 )
 
 const (

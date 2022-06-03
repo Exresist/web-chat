@@ -4,8 +4,8 @@ go 1.18
 
 require (
 	github.com/Masterminds/squirrel v1.5.3
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-gonic/gin v1.8.0
+	github.com/golang-jwt/jwt/v4 v4.1.0
 	github.com/golang-migrate/migrate/v4 v4.15.2
 	github.com/google/uuid v1.3.0
 	github.com/oklog/run v1.1.0

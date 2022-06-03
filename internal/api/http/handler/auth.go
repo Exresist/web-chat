@@ -12,9 +12,9 @@ import (
 	"golang.org/x/crypto/bcrypt"
 
 	"webChat/internal/config"
+	service "webChat/internal/controller/jwt"
 	ierr "webChat/internal/errors"
 	"webChat/internal/model"
-	service "webChat/internal/service/jwt"
 )
 
 type (

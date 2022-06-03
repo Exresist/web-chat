@@ -7,9 +7,9 @@ import (
 	"github.com/google/uuid"
 	log "go.uber.org/zap"
 
+	service "webChat/internal/controller/jwt"
 	"webChat/internal/ctxkey"
 	ierr "webChat/internal/errors"
-	service "webChat/internal/service/jwt"
 )
 
 // GinLogger receives the default log of the gin framework
